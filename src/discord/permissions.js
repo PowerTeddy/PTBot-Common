@@ -63,12 +63,13 @@ const PERMISSION_BITS = {
 
 /**
  * ORs permission names into the bitfield string Discord expects for
- * `default_member_permissions`. Plain numeric strings pass through.
- * @param {string|string[]|null|undefined} permissions Permission name(s).
+ * `default_member_permissions`. Plain numeric strings and bigints pass through.
+ * @param {string|string[]|bigint|null|undefined} permissions Permission name(s).
  * @returns {string|null} Bitfield string, or `null` when empty.
  */
 function toPermissionBitfield(permissions) {
     if (permissions === null || permissions === undefined) return null;
+    if (typeof permissions === "bigint") return permissions.toString();
     if (typeof permissions === "string" && /^\d+$/.test(permissions)) return permissions;
     const names = Array.isArray(permissions) ? permissions : [permissions];
     if (!names.length) return null;
