@@ -1,0 +1,1693 @@
+{
+  "version": 1,
+  "generatedAt": "2026-10-05T23:39:33.694Z",
+  "commands": [
+    {
+      "name": "8ball",
+      "description": "Ask your Questions to the Magic 8-ball",
+      "category": "nekos",
+      "defaultState": "on",
+      "global": false,
+      "test": false,
+      "owner": false,
+      "defaultPermissions": null,
+      "defaultPermissionsBitfield": null,
+      "options": [
+        {
+          "type": 3,
+          "name": "question",
+          "description": "Question to ask the Great 8 Ball",
+          "required": true,
+          "autocomplete": false,
+          "choices": null,
+          "minValue": null,
+          "maxValue": null
+        }
+      ],
+      "usage": "/8ball <question>",
+      "examples": "`/8ball Will I win?`\n`/8ball Are my wishes coming true?`"
+    },
+    {
+      "name": "anime",
+      "description": "Search for an anime on Kitsu.io",
+      "category": "ideas",
+      "defaultState": "on",
+      "global": false,
+      "test": false,
+      "owner": false,
+      "defaultPermissions": null,
+      "defaultPermissionsBitfield": null,
+      "options": [
+        {
+          "type": 3,
+          "name": "search",
+          "description": "The name of the anime to search for",
+          "required": true,
+          "autocomplete": false,
+          "choices": null,
+          "minValue": null,
+          "maxValue": null
+        }
+      ],
+      "usage": "/anime <search>",
+      "examples": "`/anime your name`\n`/anime kimi no na wa`"
+    },
+    {
+      "name": "avatar",
+      "description": "Get the avatar of yourself or of another user's",
+      "category": "misc",
+      "defaultState": "on",
+      "global": true,
+      "test": false,
+      "owner": false,
+      "defaultPermissions": null,
+      "defaultPermissionsBitfield": null,
+      "options": [
+        {
+          "type": 6,
+          "name": "user",
+          "description": "User of which to get their avatar",
+          "required": false,
+          "autocomplete": false,
+          "choices": null,
+          "minValue": null,
+          "maxValue": null
+        }
+      ],
+      "usage": "/avatar {@user}",
+      "examples": "`/avatar`\n`/avatar @PT`"
+    },
+    {
+      "name": "ban",
+      "description": "Ban a member from the server.",
+      "category": "moderation",
+      "defaultState": "on",
+      "global": true,
+      "test": false,
+      "owner": false,
+      "defaultPermissions": [
+        "BAN_MEMBERS"
+      ],
+      "defaultPermissionsBitfield": "4",
+      "options": [
+        {
+          "type": 6,
+          "name": "target",
+          "description": "User to ban",
+          "required": true,
+          "autocomplete": false,
+          "choices": null,
+          "minValue": null,
+          "maxValue": null
+        },
+        {
+          "type": 3,
+          "name": "duration",
+          "description": "Tempban duration (e.g. 7d). Omit for permanent",
+          "required": false,
+          "autocomplete": false,
+          "choices": null,
+          "minValue": null,
+          "maxValue": null
+        },
+        {
+          "type": 3,
+          "name": "reason",
+          "description": "Reason for the ban",
+          "required": false,
+          "autocomplete": false,
+          "choices": null,
+          "minValue": null,
+          "maxValue": null
+        },
+        {
+          "type": 4,
+          "name": "purge_days",
+          "description": "Days of messages to delete (0-7)",
+          "required": false,
+          "autocomplete": false,
+          "choices": null,
+          "minValue": 0,
+          "maxValue": 7
+        },
+        {
+          "type": 5,
+          "name": "no_dm",
+          "description": "Don't DM the user about the ban",
+          "required": false,
+          "autocomplete": false,
+          "choices": null,
+          "minValue": null,
+          "maxValue": null
+        },
+        {
+          "type": 5,
+          "name": "dry_run",
+          "description": "Preview without banning",
+          "required": false,
+          "autocomplete": false,
+          "choices": null,
+          "minValue": null,
+          "maxValue": null
+        }
+      ],
+      "usage": "/ban <target> {duration} {reason}",
+      "examples": "`/ban @PT`\n`/ban @PT 7d spamming`"
+    },
+    {
+      "name": "case",
+      "description": "Get information about a specific case",
+      "category": "moderation",
+      "defaultState": "on",
+      "global": true,
+      "test": false,
+      "owner": false,
+      "defaultPermissions": [
+        "MODERATE_MEMBERS"
+      ],
+      "defaultPermissionsBitfield": "1099511627776",
+      "options": [
+        {
+          "type": 4,
+          "name": "case_id",
+          "description": "Case number",
+          "required": true,
+          "autocomplete": false,
+          "choices": null,
+          "minValue": 1,
+          "maxValue": null
+        },
+        {
+          "type": 5,
+          "name": "delete_warning",
+          "description": "Delete the case if it is a warning",
+          "required": false,
+          "autocomplete": false,
+          "choices": null,
+          "minValue": null,
+          "maxValue": null
+        }
+      ],
+      "usage": "/case <case_id>",
+      "examples": "`/case 3`"
+    },
+    {
+      "name": "cases",
+      "description": "View cases for a particular user",
+      "category": "moderation",
+      "defaultState": "on",
+      "global": true,
+      "test": false,
+      "owner": false,
+      "defaultPermissions": [
+        "MODERATE_MEMBERS"
+      ],
+      "defaultPermissionsBitfield": "1099511627776",
+      "options": [
+        {
+          "type": 6,
+          "name": "user",
+          "description": "User to view cases for",
+          "required": true,
+          "autocomplete": false,
+          "choices": null,
+          "minValue": null,
+          "maxValue": null
+        },
+        {
+          "type": 4,
+          "name": "page",
+          "description": "Page number",
+          "required": false,
+          "autocomplete": false,
+          "choices": null,
+          "minValue": 1,
+          "maxValue": null
+        },
+        {
+          "type": 3,
+          "name": "type",
+          "description": "Filter by action (ban, kick, mute, warn, ...)",
+          "required": false,
+          "autocomplete": false,
+          "choices": null,
+          "minValue": null,
+          "maxValue": null
+        }
+      ],
+      "usage": "/cases <user> {page} {type}",
+      "examples": "`/cases @PT`\n`/cases @PT 2 warn`"
+    },
+    {
+      "name": "cat",
+      "description": "Sends an image of a cat.",
+      "category": "nekos",
+      "defaultState": "on",
+      "global": false,
+      "test": false,
+      "owner": false,
+      "defaultPermissions": null,
+      "defaultPermissionsBitfield": null,
+      "options": [],
+      "usage": "/cat",
+      "examples": "`/cat`"
+    },
+    {
+      "name": "displayrp",
+      "description": "Show how often a roleplay action was done and received.",
+      "category": "roleplay",
+      "defaultState": "off",
+      "global": false,
+      "test": false,
+      "owner": false,
+      "defaultPermissions": null,
+      "defaultPermissionsBitfield": null,
+      "options": [
+        {
+          "type": 3,
+          "name": "action",
+          "description": "Roleplay action to display stats for (omit for overview)",
+          "required": false,
+          "autocomplete": true,
+          "choices": null,
+          "minValue": null,
+          "maxValue": null
+        },
+        {
+          "type": 6,
+          "name": "user",
+          "description": "Whose stats to show (defaults to you)",
+          "required": false,
+          "autocomplete": false,
+          "choices": null,
+          "minValue": null,
+          "maxValue": null
+        }
+      ],
+      "usage": "/displayrp {action} {@user}",
+      "examples": "`/displayrp`\n`/displayrp pat`\n`/displayrp hug @PT`"
+    },
+    {
+      "name": "dog",
+      "description": "Sends an image of a dog.",
+      "category": "images",
+      "defaultState": "on",
+      "global": false,
+      "test": false,
+      "owner": false,
+      "defaultPermissions": null,
+      "defaultPermissionsBitfield": null,
+      "options": [],
+      "usage": "/dog",
+      "examples": "`/dog`"
+    },
+    {
+      "name": "generateuser",
+      "description": "Generate a user of random nationality and gender",
+      "category": "ideas",
+      "defaultState": "on",
+      "global": true,
+      "test": false,
+      "owner": false,
+      "defaultPermissions": null,
+      "defaultPermissionsBitfield": null,
+      "options": [
+        {
+          "type": 3,
+          "name": "seed",
+          "description": "Seed of an already generated person",
+          "required": false,
+          "autocomplete": false,
+          "choices": null,
+          "minValue": null,
+          "maxValue": null
+        },
+        {
+          "type": 3,
+          "name": "gender",
+          "description": "Gender of the person to generate",
+          "required": false,
+          "autocomplete": false,
+          "choices": [
+            {
+              "name": "Male",
+              "value": "male"
+            },
+            {
+              "name": "Female",
+              "value": "female"
+            }
+          ],
+          "minValue": null,
+          "maxValue": null
+        },
+        {
+          "type": 3,
+          "name": "nationality",
+          "description": "Nationality of the person to generate",
+          "required": false,
+          "autocomplete": false,
+          "choices": [
+            {
+              "name": "Australia",
+              "value": "au"
+            },
+            {
+              "name": "Brazil",
+              "value": "br"
+            },
+            {
+              "name": "Canada",
+              "value": "ca"
+            },
+            {
+              "name": "Switzerland",
+              "value": "ch"
+            },
+            {
+              "name": "Germany",
+              "value": "de"
+            },
+            {
+              "name": "Denmark",
+              "value": "dk"
+            },
+            {
+              "name": "Spain",
+              "value": "es"
+            },
+            {
+              "name": "Finland",
+              "value": "fi"
+            },
+            {
+              "name": "France",
+              "value": "fr"
+            },
+            {
+              "name": "Great Britain (UK)",
+              "value": "gb"
+            },
+            {
+              "name": "Ireland",
+              "value": "ie"
+            },
+            {
+              "name": "India",
+              "value": "in"
+            },
+            {
+              "name": "Iran",
+              "value": "ir"
+            },
+            {
+              "name": "Mexico",
+              "value": "mx"
+            },
+            {
+              "name": "Netherlands",
+              "value": "nl"
+            },
+            {
+              "name": "Norway",
+              "value": "no"
+            },
+            {
+              "name": "New Zealand (Aotearoa)",
+              "value": "nz"
+            },
+            {
+              "name": "Serbia",
+              "value": "rs"
+            },
+            {
+              "name": "Turkey",
+              "value": "tr"
+            },
+            {
+              "name": "Ukraine",
+              "value": "ua"
+            },
+            {
+              "name": "United States",
+              "value": "us"
+            }
+          ],
+          "minValue": null,
+          "maxValue": null
+        }
+      ],
+      "usage": "/randomuser",
+      "examples": "`/randomuser`"
+    },
+    {
+      "name": "help",
+      "description": "Sends you a help embed for when you don't understand a command.",
+      "category": "misc",
+      "defaultState": "on",
+      "global": true,
+      "test": false,
+      "owner": false,
+      "defaultPermissions": null,
+      "defaultPermissionsBitfield": null,
+      "options": [
+        {
+          "type": 3,
+          "name": "command",
+          "description": "Command to search for.",
+          "required": false,
+          "autocomplete": true,
+          "choices": null,
+          "minValue": null,
+          "maxValue": null
+        }
+      ],
+      "usage": "/help {command}",
+      "examples": "`/help`\n`/help rps`"
+    },
+    {
+      "name": "kick",
+      "description": "Kick a member from the server.",
+      "category": "moderation",
+      "defaultState": "on",
+      "global": true,
+      "test": false,
+      "owner": false,
+      "defaultPermissions": [
+        "KICK_MEMBERS"
+      ],
+      "defaultPermissionsBitfield": "2",
+      "options": [
+        {
+          "type": 6,
+          "name": "target",
+          "description": "Member to kick",
+          "required": true,
+          "autocomplete": false,
+          "choices": null,
+          "minValue": null,
+          "maxValue": null
+        },
+        {
+          "type": 3,
+          "name": "reason",
+          "description": "Reason for the kick",
+          "required": false,
+          "autocomplete": false,
+          "choices": null,
+          "minValue": null,
+          "maxValue": null
+        },
+        {
+          "type": 5,
+          "name": "no_dm",
+          "description": "Don't DM the user about the kick",
+          "required": false,
+          "autocomplete": false,
+          "choices": null,
+          "minValue": null,
+          "maxValue": null
+        },
+        {
+          "type": 5,
+          "name": "dry_run",
+          "description": "Preview without kicking",
+          "required": false,
+          "autocomplete": false,
+          "choices": null,
+          "minValue": null,
+          "maxValue": null
+        }
+      ],
+      "usage": "/kick <target> {reason}",
+      "examples": "`/kick @PT`\n`/kick @PT spamming`"
+    },
+    {
+      "name": "leave",
+      "description": "The bot will leave the server.",
+      "category": "moderation",
+      "defaultState": "on",
+      "global": true,
+      "test": false,
+      "owner": false,
+      "defaultPermissions": null,
+      "defaultPermissionsBitfield": null,
+      "options": [],
+      "usage": "/leave",
+      "examples": "`/leave`"
+    },
+    {
+      "name": "lock",
+      "description": "Prevent users from talking in the channel.",
+      "category": "moderation",
+      "defaultState": "on",
+      "global": true,
+      "test": false,
+      "owner": false,
+      "defaultPermissions": [
+        "MANAGE_CHANNELS"
+      ],
+      "defaultPermissionsBitfield": "16",
+      "options": [
+        {
+          "type": 7,
+          "name": "channel",
+          "description": "Channel to lock (defaults to this one)",
+          "required": false,
+          "autocomplete": false,
+          "choices": null,
+          "minValue": null,
+          "maxValue": null
+        },
+        {
+          "type": 8,
+          "name": "role",
+          "description": "Role to lock (defaults to @everyone)",
+          "required": false,
+          "autocomplete": false,
+          "choices": null,
+          "minValue": null,
+          "maxValue": null
+        }
+      ],
+      "usage": "/lock {channel} {role}",
+      "examples": "`/lock`"
+    },
+    {
+      "name": "manga",
+      "description": "Search for a manga on Kitsu.io",
+      "category": "ideas",
+      "defaultState": "on",
+      "global": false,
+      "test": false,
+      "owner": false,
+      "defaultPermissions": null,
+      "defaultPermissionsBitfield": null,
+      "options": [
+        {
+          "type": 3,
+          "name": "search",
+          "description": "The name of the manga to search for",
+          "required": true,
+          "autocomplete": false,
+          "choices": null,
+          "minValue": null,
+          "maxValue": null
+        }
+      ],
+      "usage": "/manga <search>",
+      "examples": "`/manga your name`\n`/manga kimi no na wa`"
+    },
+    {
+      "name": "maze",
+      "description": "Generate a random maze.",
+      "category": "engagement",
+      "defaultState": "on",
+      "global": false,
+      "test": false,
+      "owner": false,
+      "defaultPermissions": null,
+      "defaultPermissionsBitfield": null,
+      "options": [
+        {
+          "type": 4,
+          "name": "width",
+          "description": "Width of the maze (5-13)",
+          "required": false,
+          "autocomplete": false,
+          "choices": null,
+          "minValue": 5,
+          "maxValue": 13
+        },
+        {
+          "type": 4,
+          "name": "height",
+          "description": "Height of the maze (5-15)",
+          "required": false,
+          "autocomplete": false,
+          "choices": null,
+          "minValue": 5,
+          "maxValue": 15
+        }
+      ],
+      "usage": "/maze {x} {y} - defaults to 13 and 15",
+      "examples": "`/maze`\n`/maze 10 10`"
+    },
+    {
+      "name": "minecraft",
+      "description": "Get a Minecraft Server's stats",
+      "category": "ideas",
+      "defaultState": "on",
+      "global": false,
+      "test": false,
+      "owner": false,
+      "defaultPermissions": null,
+      "defaultPermissionsBitfield": null,
+      "options": [
+        {
+          "type": 3,
+          "name": "ip",
+          "description": "Minecraft Server IP",
+          "required": true,
+          "autocomplete": false,
+          "choices": null,
+          "minValue": null,
+          "maxValue": null
+        },
+        {
+          "type": 4,
+          "name": "port",
+          "description": "Server port - defaults to 25565",
+          "required": false,
+          "autocomplete": false,
+          "choices": null,
+          "minValue": null,
+          "maxValue": null
+        }
+      ],
+      "usage": "/minecraft <Server IP> {Server Port}",
+      "examples": "`/minecraft mc.hypixel.net`\n`/minecraft java us.mineplex.com 25565`"
+    },
+    {
+      "name": "motivation",
+      "description": "A random episode from chibird: [chibird](https://chibird.com)",
+      "category": "ideas",
+      "defaultState": "on",
+      "global": true,
+      "test": false,
+      "owner": false,
+      "defaultPermissions": null,
+      "defaultPermissionsBitfield": null,
+      "options": [],
+      "usage": "/motivation",
+      "examples": "`/motivation`"
+    },
+    {
+      "name": "mute",
+      "description": "Mute a member of the server.",
+      "category": "moderation",
+      "defaultState": "on",
+      "global": true,
+      "test": false,
+      "owner": false,
+      "defaultPermissions": [
+        "MODERATE_MEMBERS"
+      ],
+      "defaultPermissionsBitfield": "1099511627776",
+      "options": [
+        {
+          "type": 6,
+          "name": "target",
+          "description": "Member to mute",
+          "required": true,
+          "autocomplete": false,
+          "choices": null,
+          "minValue": null,
+          "maxValue": null
+        },
+        {
+          "type": 3,
+          "name": "duration",
+          "description": "Mute duration (e.g. 1h). Omit for 28 days",
+          "required": false,
+          "autocomplete": false,
+          "choices": null,
+          "minValue": null,
+          "maxValue": null
+        },
+        {
+          "type": 3,
+          "name": "reason",
+          "description": "Reason for the mute",
+          "required": false,
+          "autocomplete": false,
+          "choices": null,
+          "minValue": null,
+          "maxValue": null
+        },
+        {
+          "type": 5,
+          "name": "no_dm",
+          "description": "Don't DM the user about the mute",
+          "required": false,
+          "autocomplete": false,
+          "choices": null,
+          "minValue": null,
+          "maxValue": null
+        },
+        {
+          "type": 5,
+          "name": "dry_run",
+          "description": "Preview without muting",
+          "required": false,
+          "autocomplete": false,
+          "choices": null,
+          "minValue": null,
+          "maxValue": null
+        }
+      ],
+      "usage": "/mute <target> {duration} {reason}",
+      "examples": "`/mute @PT`\n`/mute @PT 1h spamming`"
+    },
+    {
+      "name": "oldest",
+      "description": "View the oldest members in the server!",
+      "category": "misc",
+      "defaultState": "on",
+      "global": true,
+      "test": false,
+      "owner": false,
+      "defaultPermissions": null,
+      "defaultPermissionsBitfield": null,
+      "options": [
+        {
+          "type": 3,
+          "name": "type",
+          "description": "Choose to view by account creation date or server join date.",
+          "required": false,
+          "autocomplete": false,
+          "choices": [
+            {
+              "name": "Account Creation Date",
+              "value": "account"
+            },
+            {
+              "name": "Server Join Date",
+              "value": "joined"
+            }
+          ],
+          "minValue": null,
+          "maxValue": null
+        },
+        {
+          "type": 5,
+          "name": "bots",
+          "description": "Include bots in the list.",
+          "required": false,
+          "autocomplete": false,
+          "choices": null,
+          "minValue": null,
+          "maxValue": null
+        }
+      ],
+      "usage": "/oldest",
+      "examples": "`/oldest`"
+    },
+    {
+      "name": "ping",
+      "description": "Pong!",
+      "category": "misc",
+      "defaultState": "on",
+      "global": true,
+      "test": false,
+      "owner": false,
+      "defaultPermissions": null,
+      "defaultPermissionsBitfield": null,
+      "options": [],
+      "usage": "/ping",
+      "examples": "`/ping`"
+    },
+    {
+      "name": "purge",
+      "description": "Delete messages with advanced filters",
+      "category": "moderation",
+      "defaultState": "on",
+      "global": false,
+      "test": false,
+      "owner": false,
+      "defaultPermissions": [
+        "MANAGE_MESSAGES"
+      ],
+      "defaultPermissionsBitfield": "8192",
+      "options": [
+        {
+          "type": 4,
+          "name": "limit",
+          "description": "Number of messages to scan, applied before filtering (1-1000)",
+          "required": true,
+          "autocomplete": false,
+          "choices": null,
+          "minValue": 1,
+          "maxValue": 1000
+        },
+        {
+          "type": 7,
+          "name": "channel",
+          "description": "Channel to purge in (defaults to this one)",
+          "required": false,
+          "autocomplete": false,
+          "choices": null,
+          "minValue": null,
+          "maxValue": null
+        },
+        {
+          "type": 5,
+          "name": "include_pinned",
+          "description": "Whether to include pinned messages",
+          "required": false,
+          "autocomplete": false,
+          "choices": null,
+          "minValue": null,
+          "maxValue": null
+        },
+        {
+          "type": 3,
+          "name": "newer_than",
+          "description": "Only messages newer than this (duration like 30m, or message ID)",
+          "required": false,
+          "autocomplete": false,
+          "choices": null,
+          "minValue": null,
+          "maxValue": null
+        },
+        {
+          "type": 3,
+          "name": "older_than",
+          "description": "Only messages older than this (duration like 2h, or message ID)",
+          "required": false,
+          "autocomplete": false,
+          "choices": null,
+          "minValue": null,
+          "maxValue": null
+        },
+        {
+          "type": 3,
+          "name": "before_message",
+          "description": "Only messages sent before this message ID",
+          "required": false,
+          "autocomplete": false,
+          "choices": null,
+          "minValue": null,
+          "maxValue": null
+        },
+        {
+          "type": 3,
+          "name": "after_message",
+          "description": "Only messages sent after this message ID",
+          "required": false,
+          "autocomplete": false,
+          "choices": null,
+          "minValue": null,
+          "maxValue": null
+        },
+        {
+          "type": 3,
+          "name": "including",
+          "description": "Only messages including this text (or /regex/flags)",
+          "required": false,
+          "autocomplete": false,
+          "choices": null,
+          "minValue": null,
+          "maxValue": null
+        },
+        {
+          "type": 3,
+          "name": "excluding",
+          "description": "Skip messages including this text (or /regex/flags)",
+          "required": false,
+          "autocomplete": false,
+          "choices": null,
+          "minValue": null,
+          "maxValue": null
+        },
+        {
+          "type": 6,
+          "name": "author",
+          "description": "Only messages sent by this user",
+          "required": false,
+          "autocomplete": false,
+          "choices": null,
+          "minValue": null,
+          "maxValue": null
+        },
+        {
+          "type": 6,
+          "name": "not_author",
+          "description": "Skip messages sent by this user",
+          "required": false,
+          "autocomplete": false,
+          "choices": null,
+          "minValue": null,
+          "maxValue": null
+        },
+        {
+          "type": 5,
+          "name": "has_image",
+          "description": "Only messages that do (or do not) contain an image",
+          "required": false,
+          "autocomplete": false,
+          "choices": null,
+          "minValue": null,
+          "maxValue": null
+        },
+        {
+          "type": 5,
+          "name": "has_link",
+          "description": "Only messages that do (or do not) contain a link",
+          "required": false,
+          "autocomplete": false,
+          "choices": null,
+          "minValue": null,
+          "maxValue": null
+        },
+        {
+          "type": 5,
+          "name": "has_invite",
+          "description": "Only messages that do (or do not) contain a server invite",
+          "required": false,
+          "autocomplete": false,
+          "choices": null,
+          "minValue": null,
+          "maxValue": null
+        },
+        {
+          "type": 5,
+          "name": "has_attachment",
+          "description": "Only messages that do (or do not) have an attachment",
+          "required": false,
+          "autocomplete": false,
+          "choices": null,
+          "minValue": null,
+          "maxValue": null
+        }
+      ],
+      "usage": "/purge <limit> {filters}",
+      "examples": "`/purge 10`\n`/purge 100 author:@PT`\n`/purge 50 including:hello has_link:true`"
+    },
+    {
+      "name": "reason",
+      "description": "Add a reason to an existing case.",
+      "category": "moderation",
+      "defaultState": "on",
+      "global": true,
+      "test": false,
+      "owner": false,
+      "defaultPermissions": [
+        "MODERATE_MEMBERS"
+      ],
+      "defaultPermissionsBitfield": "1099511627776",
+      "options": [
+        {
+          "type": 4,
+          "name": "case_id",
+          "description": "Case number",
+          "required": true,
+          "autocomplete": false,
+          "choices": null,
+          "minValue": 1,
+          "maxValue": null
+        },
+        {
+          "type": 3,
+          "name": "updated_reason",
+          "description": "New reason",
+          "required": true,
+          "autocomplete": false,
+          "choices": null,
+          "minValue": null,
+          "maxValue": null
+        },
+        {
+          "type": 5,
+          "name": "notify",
+          "description": "DM the user about the updated reason",
+          "required": false,
+          "autocomplete": false,
+          "choices": null,
+          "minValue": null,
+          "maxValue": null
+        }
+      ],
+      "usage": "/reason <case_id> <updated_reason> {notify}",
+      "examples": "`/reason 3 spamming links`"
+    },
+    {
+      "name": "reload",
+      "description": "Reloads a bot command!",
+      "category": "owner",
+      "defaultState": "on",
+      "global": false,
+      "test": true,
+      "owner": true,
+      "defaultPermissions": null,
+      "defaultPermissionsBitfield": null,
+      "options": [
+        {
+          "type": 3,
+          "name": "command",
+          "description": "Command to reload",
+          "required": true,
+          "autocomplete": true,
+          "choices": null,
+          "minValue": null,
+          "maxValue": null
+        }
+      ],
+      "usage": "/reload <command>",
+      "examples": "`/reload help`"
+    },
+    {
+      "name": "rp",
+      "description": "Anime roleplay reactions.",
+      "category": "roleplay",
+      "defaultState": "off",
+      "global": false,
+      "test": false,
+      "owner": false,
+      "defaultPermissions": null,
+      "defaultPermissionsBitfield": null,
+      "options": [
+        {
+          "type": 3,
+          "name": "action",
+          "description": "Roleplay action",
+          "required": true,
+          "autocomplete": true,
+          "choices": null,
+          "minValue": null,
+          "maxValue": null
+        },
+        {
+          "type": 6,
+          "name": "user",
+          "description": "Who to target - leave empty to select multiple people",
+          "required": false,
+          "autocomplete": false,
+          "choices": null,
+          "minValue": null,
+          "maxValue": null
+        },
+        {
+          "type": 3,
+          "name": "reason",
+          "description": "Message/reason for the action",
+          "required": false,
+          "autocomplete": false,
+          "choices": null,
+          "minValue": null,
+          "maxValue": null
+        },
+        {
+          "type": 3,
+          "name": "pairing",
+          "description": "Character pairing for the GIF",
+          "required": false,
+          "autocomplete": false,
+          "choices": [
+            {
+              "name": "Solo Girl",
+              "value": "f"
+            },
+            {
+              "name": "Solo Boy",
+              "value": "m"
+            },
+            {
+              "name": "Girl × Girl",
+              "value": "ff"
+            },
+            {
+              "name": "Boy × Boy",
+              "value": "mm"
+            },
+            {
+              "name": "Girl → Boy",
+              "value": "fm"
+            },
+            {
+              "name": "Boy → Girl",
+              "value": "mf"
+            }
+          ],
+          "minValue": null,
+          "maxValue": null
+        }
+      ],
+      "usage": "/rp <action> {@user} {reason} {pairing}",
+      "examples": "`/rp hug @PT`\n`/rp cry`",
+      "actions": [
+        {
+          "name": "bite",
+          "description": "Bite someone",
+          "users": "required"
+        },
+        {
+          "name": "blush",
+          "description": "Blush at someone",
+          "users": "optional"
+        },
+        {
+          "name": "bonk",
+          "description": "Hit someone on their head",
+          "users": "required"
+        },
+        {
+          "name": "boop",
+          "description": "Boop a user on the nose",
+          "users": "required"
+        },
+        {
+          "name": "bored",
+          "description": "Show how bored you are",
+          "users": "optional"
+        },
+        {
+          "name": "cry",
+          "description": "Cry at someone",
+          "users": "optional"
+        },
+        {
+          "name": "cuddle",
+          "description": "Cuddle someone",
+          "users": "required"
+        },
+        {
+          "name": "dance",
+          "description": "Dance with someone",
+          "users": "optional"
+        },
+        {
+          "name": "facepalm",
+          "description": "Facepalm... it explains itself",
+          "users": "optional"
+        },
+        {
+          "name": "feed",
+          "description": "Feed yourself or someone else some food",
+          "users": "required"
+        },
+        {
+          "name": "handhold",
+          "description": "Do the lewdest act of all. I hope you two are married",
+          "users": "required"
+        },
+        {
+          "name": "happy",
+          "description": "Show how happy you are",
+          "users": "optional"
+        },
+        {
+          "name": "highfive",
+          "description": "Give someone a high five",
+          "users": "required"
+        },
+        {
+          "name": "hug",
+          "description": "Hug someone tightly",
+          "users": "required"
+        },
+        {
+          "name": "kill",
+          "description": "Kill someone. Just make sure you hide the body",
+          "users": "required"
+        },
+        {
+          "name": "kiss",
+          "description": "Give someone a big smooch on the lips",
+          "users": "required"
+        },
+        {
+          "name": "laugh",
+          "description": "Laugh at someone for being funny or just a plain idiot",
+          "users": "optional"
+        },
+        {
+          "name": "lick",
+          "description": "Get a taste of someone by licking them",
+          "users": "required"
+        },
+        {
+          "name": "no",
+          "description": "Disagree with something",
+          "users": "optional"
+        },
+        {
+          "name": "nom",
+          "description": "Lightly bite into someone, or as some call it. nom someone",
+          "users": "required"
+        },
+        {
+          "name": "pat",
+          "description": "Give someone a lovely head pat",
+          "users": "required"
+        },
+        {
+          "name": "peck",
+          "description": "Give someone a quick kiss on the cheek",
+          "users": "required"
+        },
+        {
+          "name": "poke",
+          "description": "Poke someone for attention",
+          "users": "required"
+        },
+        {
+          "name": "pout",
+          "description": "Pull the classic tsundere move of saying \"hmph\"",
+          "users": "optional"
+        },
+        {
+          "name": "run",
+          "description": "Run away as fast as you can",
+          "users": "optional"
+        },
+        {
+          "name": "shoot",
+          "description": "Put a bullet through someone's head",
+          "users": "required"
+        },
+        {
+          "name": "shrug",
+          "description": "Let people see how many of those f's you still have to give",
+          "users": "optional"
+        },
+        {
+          "name": "sip",
+          "description": "Sip some juice as you stare at idiots in chat",
+          "users": "optional"
+        },
+        {
+          "name": "slap",
+          "description": "Slap someone in the face",
+          "users": "required"
+        },
+        {
+          "name": "sleep",
+          "description": "Tell someone or everyone goodnight",
+          "users": "optional"
+        },
+        {
+          "name": "smug",
+          "description": "Pull a smug face to show how lewd you are",
+          "users": "optional"
+        },
+        {
+          "name": "stare",
+          "description": "Stare at someone with a blank expression",
+          "users": "optional"
+        },
+        {
+          "name": "think",
+          "description": "Consider someones IQ score",
+          "users": "optional"
+        },
+        {
+          "name": "thumbsup",
+          "description": "Give someone a big thumbs up. They got this!",
+          "users": "optional"
+        },
+        {
+          "name": "tickle",
+          "description": "Tickle someone to death",
+          "users": "required"
+        },
+        {
+          "name": "wag",
+          "description": "Wag your tail around",
+          "users": "optional"
+        },
+        {
+          "name": "wave",
+          "description": "Wave at someone",
+          "users": "optional"
+        },
+        {
+          "name": "wink",
+          "description": "Just give them a slight hint *wink* *wink*",
+          "users": "optional"
+        },
+        {
+          "name": "yes",
+          "description": "Agree with something",
+          "users": "optional"
+        }
+      ]
+    },
+    {
+      "name": "rps",
+      "description": "Rock Paper Scissors game. React to one of the emojis to play the game.",
+      "category": "engagement",
+      "defaultState": "on",
+      "global": false,
+      "test": false,
+      "owner": false,
+      "defaultPermissions": null,
+      "defaultPermissionsBitfield": null,
+      "options": [],
+      "usage": "/rps",
+      "examples": "`/rps`"
+    },
+    {
+      "name": "serverinfo",
+      "description": "Gets some info about this server!",
+      "category": "misc",
+      "defaultState": "on",
+      "global": true,
+      "test": false,
+      "owner": false,
+      "defaultPermissions": null,
+      "defaultPermissionsBitfield": null,
+      "options": [],
+      "usage": "/serverinfo",
+      "examples": "`/serverinfo`"
+    },
+    {
+      "name": "shutdown",
+      "description": "Shuts down the bot!",
+      "category": "owner",
+      "defaultState": "on",
+      "global": false,
+      "test": true,
+      "owner": true,
+      "defaultPermissions": null,
+      "defaultPermissionsBitfield": null,
+      "options": [],
+      "usage": "/shutdown",
+      "examples": "`/shutdown`"
+    },
+    {
+      "name": "slowmode",
+      "description": "Enable/disable slowmode for the desired channel.",
+      "category": "moderation",
+      "defaultState": "on",
+      "global": true,
+      "test": false,
+      "owner": false,
+      "defaultPermissions": [
+        "MANAGE_CHANNELS"
+      ],
+      "defaultPermissionsBitfield": "16",
+      "options": [
+        {
+          "type": 3,
+          "name": "duration",
+          "description": "Delay like 10s, 1m, 1h (0 or off to disable)",
+          "required": true,
+          "autocomplete": false,
+          "choices": null,
+          "minValue": null,
+          "maxValue": null
+        },
+        {
+          "type": 7,
+          "name": "channel",
+          "description": "Channel to change (defaults to this one)",
+          "required": false,
+          "autocomplete": false,
+          "choices": null,
+          "minValue": null,
+          "maxValue": null
+        },
+        {
+          "type": 3,
+          "name": "reason",
+          "description": "Reason for the audit log",
+          "required": false,
+          "autocomplete": false,
+          "choices": null,
+          "minValue": null,
+          "maxValue": null
+        }
+      ],
+      "usage": "/slowmode <duration> {channel}",
+      "examples": "`/slowmode 10s`\n`/slowmode off`"
+    },
+    {
+      "name": "trivia",
+      "description": "Randomly generated question",
+      "category": "engagement",
+      "defaultState": "on",
+      "global": false,
+      "test": false,
+      "owner": false,
+      "defaultPermissions": null,
+      "defaultPermissionsBitfield": null,
+      "options": [
+        {
+          "type": 3,
+          "name": "difficulty",
+          "description": "Difficulty of the question",
+          "required": false,
+          "autocomplete": false,
+          "choices": [
+            {
+              "name": "easy",
+              "value": "easy"
+            },
+            {
+              "name": "medium",
+              "value": "medium"
+            },
+            {
+              "name": "hard",
+              "value": "hard"
+            }
+          ],
+          "minValue": null,
+          "maxValue": null
+        },
+        {
+          "type": 3,
+          "name": "type",
+          "description": "The type of question",
+          "required": false,
+          "autocomplete": false,
+          "choices": [
+            {
+              "name": "True or False",
+              "value": "boolean"
+            },
+            {
+              "name": "Multiple Choices",
+              "value": "multiple"
+            }
+          ],
+          "minValue": null,
+          "maxValue": null
+        }
+      ],
+      "usage": "/trivia {difficulty} {type}\n**Difficulties**: ``Easy`` ``Medium`` ``Hard``\n**Types**: ``Multiple`` ``TrueFalse",
+      "examples": "`/trivia`\n`/trivia truefalse`\n`/trivia hard multiple`"
+    },
+    {
+      "name": "unban",
+      "description": "Unban a user from the server",
+      "category": "moderation",
+      "defaultState": "on",
+      "global": true,
+      "test": false,
+      "owner": false,
+      "defaultPermissions": [
+        "BAN_MEMBERS"
+      ],
+      "defaultPermissionsBitfield": "4",
+      "options": [
+        {
+          "type": 6,
+          "name": "target",
+          "description": "User to unban",
+          "required": true,
+          "autocomplete": false,
+          "choices": null,
+          "minValue": null,
+          "maxValue": null
+        },
+        {
+          "type": 3,
+          "name": "reason",
+          "description": "Reason for the unban",
+          "required": false,
+          "autocomplete": false,
+          "choices": null,
+          "minValue": null,
+          "maxValue": null
+        },
+        {
+          "type": 5,
+          "name": "dry_run",
+          "description": "Preview without unbanning",
+          "required": false,
+          "autocomplete": false,
+          "choices": null,
+          "minValue": null,
+          "maxValue": null
+        },
+        {
+          "type": 5,
+          "name": "no_dm",
+          "description": "Don't DM the user about the unban",
+          "required": false,
+          "autocomplete": false,
+          "choices": null,
+          "minValue": null,
+          "maxValue": null
+        }
+      ],
+      "usage": "/unban <target> {reason}",
+      "examples": "`/unban @PT`"
+    },
+    {
+      "name": "unmute",
+      "description": "Unmute a muted user.",
+      "category": "moderation",
+      "defaultState": "on",
+      "global": true,
+      "test": false,
+      "owner": false,
+      "defaultPermissions": [
+        "MODERATE_MEMBERS"
+      ],
+      "defaultPermissionsBitfield": "1099511627776",
+      "options": [
+        {
+          "type": 6,
+          "name": "target",
+          "description": "User to unmute",
+          "required": true,
+          "autocomplete": false,
+          "choices": null,
+          "minValue": null,
+          "maxValue": null
+        },
+        {
+          "type": 3,
+          "name": "reason",
+          "description": "Reason for the unmute",
+          "required": false,
+          "autocomplete": false,
+          "choices": null,
+          "minValue": null,
+          "maxValue": null
+        },
+        {
+          "type": 5,
+          "name": "no_dm",
+          "description": "Don't DM the user about the unmute",
+          "required": false,
+          "autocomplete": false,
+          "choices": null,
+          "minValue": null,
+          "maxValue": null
+        },
+        {
+          "type": 5,
+          "name": "dry_run",
+          "description": "Preview without unmuting",
+          "required": false,
+          "autocomplete": false,
+          "choices": null,
+          "minValue": null,
+          "maxValue": null
+        }
+      ],
+      "usage": "/unmute <target> {reason}",
+      "examples": "`/unmute @PT`"
+    },
+    {
+      "name": "user",
+      "description": "Get the user info of yourself or another user!",
+      "category": "misc",
+      "defaultState": "on",
+      "global": true,
+      "test": false,
+      "owner": false,
+      "defaultPermissions": null,
+      "defaultPermissionsBitfield": null,
+      "options": [
+        {
+          "type": 6,
+          "name": "user",
+          "description": "User of which to get their information",
+          "required": false,
+          "autocomplete": false,
+          "choices": null,
+          "minValue": null,
+          "maxValue": null
+        }
+      ],
+      "usage": "/userinfo {@user}",
+      "examples": "`/userinfo`\n`/userinfo @PT`"
+    },
+    {
+      "name": "wallpaper",
+      "description": "Sends a Manga Wallpaper",
+      "category": "nekos",
+      "defaultState": "on",
+      "global": false,
+      "test": false,
+      "owner": false,
+      "defaultPermissions": null,
+      "defaultPermissionsBitfield": null,
+      "options": [],
+      "usage": "/wallpaper",
+      "examples": "`/wallpaper`"
+    },
+    {
+      "name": "warn",
+      "description": "Add a warning to a user",
+      "category": "moderation",
+      "defaultState": "on",
+      "global": true,
+      "test": false,
+      "owner": false,
+      "defaultPermissions": [
+        "MODERATE_MEMBERS"
+      ],
+      "defaultPermissionsBitfield": "1099511627776",
+      "options": [
+        {
+          "type": 6,
+          "name": "target",
+          "description": "User to warn",
+          "required": true,
+          "autocomplete": false,
+          "choices": null,
+          "minValue": null,
+          "maxValue": null
+        },
+        {
+          "type": 3,
+          "name": "reason",
+          "description": "Reason for the warning",
+          "required": false,
+          "autocomplete": false,
+          "choices": null,
+          "minValue": null,
+          "maxValue": null
+        },
+        {
+          "type": 3,
+          "name": "duration",
+          "description": "Warning expiry (e.g. 30d). Omit for permanent",
+          "required": false,
+          "autocomplete": false,
+          "choices": null,
+          "minValue": null,
+          "maxValue": null
+        },
+        {
+          "type": 5,
+          "name": "no_dm",
+          "description": "Don't DM the user about the warning",
+          "required": false,
+          "autocomplete": false,
+          "choices": null,
+          "minValue": null,
+          "maxValue": null
+        },
+        {
+          "type": 5,
+          "name": "dry_run",
+          "description": "Preview without warning",
+          "required": false,
+          "autocomplete": false,
+          "choices": null,
+          "minValue": null,
+          "maxValue": null
+        }
+      ],
+      "usage": "/warn <target> {reason}",
+      "examples": "`/warn @PT`\n`/warn @PT spamming`"
+    }
+  ]
+}

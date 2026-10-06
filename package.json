@@ -1,0 +1,19 @@
+{
+  "name": "ptbot-common",
+  "version": "0.1.0",
+  "description": "Shared registry, constants, schemas and API contracts for PTBot (bot + website)",
+  "main": "src/index.js",
+  "scripts": {
+    "build:commands": "node scripts/build-commands.js",
+    "test": "node scripts/verify.js"
+  },
+  "license": "ISC",
+  "peerDependencies": {
+    "mongoose": "^8.0.0 || ^9.0.0"
+  },
+  "peerDependenciesMeta": {
+    "mongoose": {
+      "optional": true
+    }
+  }
+}
