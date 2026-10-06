@@ -7,7 +7,7 @@
     "build:commands": "node scripts/build-commands.js",
     "test": "node scripts/verify.js"
   },
-  "license": "ISC",
+  "license": "MIT",
   "peerDependencies": {
     "mongoose": "^8.0.0 || ^9.0.0"
   },
