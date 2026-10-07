@@ -56,6 +56,9 @@ function buildModels(mongoose) {
         action: { type: mongoose.SchemaTypes.String, required: true, index: true },
         reason: { type: mongoose.SchemaTypes.String, required: false, default: "No reason" },
         expiresAt: { type: mongoose.SchemaTypes.Date, required: false, default: null },
+        // false once explicitly undone (unban/unmute, warning deleted).
+        // Expiry is NOT stored here — derive it at read time
+        // (`expiresAt` > now), so it can never go stale.
         active: { type: mongoose.SchemaTypes.Boolean, required: false, default: true },
         createdAt: { type: mongoose.SchemaTypes.Date, required: false, default: Date.now },
     });
