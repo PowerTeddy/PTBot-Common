@@ -60,6 +60,12 @@ function buildModels(mongoose) {
         createdAt: { type: mongoose.SchemaTypes.Date, required: false, default: Date.now },
     });
     caseSchema.index({ guildID: 1, caseId: 1 }, { unique: true });
+    // /cases listing: per-user filter + newest-first sort
+    caseSchema.index({ guildID: 1, userID: 1, action: 1, caseId: -1 });
+    // undo lookups (unban/unmute close this user's active cases)
+    caseSchema.index({ guildID: 1, userID: 1, action: 1, active: 1 });
+    // boot expiry sweep: all expirable active cases
+    caseSchema.index({ active: 1, expiresAt: 1 });
 
     return {
         Guild: mongoose.model("Guild", guildSchema, "guilds"),
