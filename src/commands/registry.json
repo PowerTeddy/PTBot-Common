@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "generatedAt": "2026-10-06T02:41:54.342Z",
+  "generatedAt": "2026-10-10T14:21:21.851Z",
   "commands": [
     {
       "name": "8ball",
@@ -670,7 +670,7 @@
     },
     {
       "name": "motivation",
-      "description": "A random episode from chibird: [chibird](https://chibird.com)",
+      "description": "A random motivational drawing from chibird: [chibird](https://chibird.com)",
       "category": "ideas",
       "defaultState": "on",
       "global": true,
