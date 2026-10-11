@@ -65,6 +65,16 @@ function buildModels(mongoose) {
         closedBy: { type: mongoose.SchemaTypes.String, required: false, default: null },
         closedReason: { type: mongoose.SchemaTypes.String, required: false, default: null },
         closedAt: { type: mongoose.SchemaTypes.Date, required: false, default: null },
+        // moderator-only notes. Never shown to the punished user;
+        // `/case` (mod-only) and the dashboard render them.
+        modNotes: {
+            type: [{
+                body: { type: mongoose.SchemaTypes.String, required: true },
+                authorID: { type: mongoose.SchemaTypes.String, required: true },
+                createdAt: { type: mongoose.SchemaTypes.Date, required: false, default: Date.now },
+            }],
+            default: [],
+        },
         createdAt: { type: mongoose.SchemaTypes.Date, required: false, default: Date.now },
     });
     caseSchema.index({ guildID: 1, caseId: 1 }, { unique: true });
