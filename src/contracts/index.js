@@ -10,6 +10,7 @@ const ENDPOINTS = {
     setRpActions: "POST /:guildid/rpactions",
     getModSettings: "GET /:guildid/modsettings",
     setModSettings: "POST /:guildid/modsettings",
+    closeModCase: "POST /:guildid/modcases/:caseId/close",
 };
 
 /**
@@ -35,6 +36,11 @@ const ENDPOINTS = {
  * @property {boolean} [notify] DM the target.
  * @property {boolean} [requireReason] Reject reasonless use.
  * @property {boolean} [requireDuration] Reject durationless use.
+ *
+ * @typedef {Object} CloseCaseResult
+ * @property {Object} case Updated case doc.
+ * @property {string|null} lifted Discord lift that ran (`"unban"`,
+ * `"unmute"`, or `null` when record-only, already lifted, or already closed).
  */
 
 module.exports = { ENDPOINTS };
