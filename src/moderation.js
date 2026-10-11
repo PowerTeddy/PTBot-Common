@@ -10,6 +10,7 @@ const MOD_TOGGLES = {
     mute: ["notify", "requireReason", "requireDuration"],
     unmute: ["notify", "requireReason"],
     unban: ["notify", "requireReason"],
+    unwarn: ["notify", "requireReason"],
     warn: ["notify", "requireReason", "requireDuration"],
     slowmode: ["requireReason"],
 };

@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "generatedAt": "2026-10-10T17:10:34.233Z",
+  "generatedAt": "2026-10-11T03:39:18.424Z",
   "commands": [
     {
       "name": "8ball",
@@ -175,16 +175,6 @@
           "autocomplete": false,
           "choices": null,
           "minValue": 1,
-          "maxValue": null
-        },
-        {
-          "type": 5,
-          "name": "delete_warning",
-          "description": "Delete the case if it is a warning",
-          "required": false,
-          "autocomplete": false,
-          "choices": null,
-          "minValue": null,
           "maxValue": null
         }
       ],
@@ -1582,6 +1572,63 @@
       ],
       "usage": "/unmute <target> {reason}",
       "examples": "`/unmute @PT`"
+    },
+    {
+      "name": "unwarn",
+      "description": "Remove a user's active warnings.",
+      "category": "moderation",
+      "defaultState": "on",
+      "global": false,
+      "test": false,
+      "owner": false,
+      "defaultPermissions": [
+        "MODERATE_MEMBERS"
+      ],
+      "defaultPermissionsBitfield": "1099511627776",
+      "options": [
+        {
+          "type": 6,
+          "name": "target",
+          "description": "User to unwarn",
+          "required": true,
+          "autocomplete": false,
+          "choices": null,
+          "minValue": null,
+          "maxValue": null
+        },
+        {
+          "type": 3,
+          "name": "reason",
+          "description": "Reason for removing the warnings",
+          "required": false,
+          "autocomplete": false,
+          "choices": null,
+          "minValue": null,
+          "maxValue": null
+        },
+        {
+          "type": 5,
+          "name": "no_dm",
+          "description": "Don't DM the user about the unwarn",
+          "required": false,
+          "autocomplete": false,
+          "choices": null,
+          "minValue": null,
+          "maxValue": null
+        },
+        {
+          "type": 5,
+          "name": "dry_run",
+          "description": "Preview without removing warnings",
+          "required": false,
+          "autocomplete": false,
+          "choices": null,
+          "minValue": null,
+          "maxValue": null
+        }
+      ],
+      "usage": "/unwarn <target> {reason}",
+      "examples": "`/unwarn @PT`"
     },
     {
       "name": "user",
