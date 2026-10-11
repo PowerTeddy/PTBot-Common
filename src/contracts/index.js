@@ -41,6 +41,9 @@ const ENDPOINTS = {
  * @property {Object} case Updated case doc.
  * @property {string|null} lifted Discord lift that ran (`"unban"`,
  * `"unmute"`, or `null` when record-only, already lifted, or already closed).
+ * Closing a stale ban/mute while a newer active one exists for the same
+ * user fails with 409 + `{ message, newerCase }` — the newer case owns
+ * the live punishment.
  */
 
 module.exports = { ENDPOINTS };
