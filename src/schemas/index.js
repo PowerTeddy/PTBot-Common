@@ -54,12 +54,17 @@ function buildModels(mongoose) {
         userID: { type: mongoose.SchemaTypes.String, required: true, index: true },
         moderatorID: { type: mongoose.SchemaTypes.String, required: true },
         action: { type: mongoose.SchemaTypes.String, required: true, index: true },
-        reason: { type: mongoose.SchemaTypes.String, required: false, default: "No reason" },
+        reason: { type: mongoose.SchemaTypes.String, required: false, default: null },
         expiresAt: { type: mongoose.SchemaTypes.Date, required: false, default: null },
         // false once explicitly undone (unban/unmute, warning deleted).
         // Expiry is NOT stored here — derive it at read time
         // (`expiresAt` > now), so it can never go stale.
         active: { type: mongoose.SchemaTypes.Boolean, required: false, default: true },
+        // lifecycle of the close: who undid it, why, and when.
+        // Null until something closes the case.
+        closedBy: { type: mongoose.SchemaTypes.String, required: false, default: null },
+        closedReason: { type: mongoose.SchemaTypes.String, required: false, default: null },
+        closedAt: { type: mongoose.SchemaTypes.Date, required: false, default: null },
         createdAt: { type: mongoose.SchemaTypes.Date, required: false, default: Date.now },
     });
     caseSchema.index({ guildID: 1, caseId: 1 }, { unique: true });
