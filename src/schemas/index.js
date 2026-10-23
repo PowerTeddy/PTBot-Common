@@ -52,7 +52,7 @@ function buildModels(mongoose) {
         // per-guild sequential case number
         caseId: { type: mongoose.SchemaTypes.Number, required: true },
         userID: { type: mongoose.SchemaTypes.String, required: true, index: true },
-        moderatorID: { type: mongoose.SchemaTypes.String, required: true },
+        moderatorID: { type: mongoose.SchemaTypes.String, required: false, default: null },
         action: { type: mongoose.SchemaTypes.String, required: true, index: true },
         reason: { type: mongoose.SchemaTypes.String, required: false, default: null },
         expiresAt: { type: mongoose.SchemaTypes.Date, required: false, default: null },
