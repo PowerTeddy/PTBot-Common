@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "generatedAt": "2026-10-24T04:41:40.244Z",
+  "generatedAt": "2026-10-24T05:12:07.100Z",
   "commands": [
     {
       "name": "8ball",
@@ -1037,6 +1037,51 @@
       ],
       "usage": "/reload <command>",
       "examples": "`/reload help`"
+    },
+    {
+      "name": "report",
+      "description": "Report a message to the server's moderators",
+      "category": "moderation",
+      "defaultState": "on",
+      "global": false,
+      "test": false,
+      "owner": false,
+      "defaultPermissions": null,
+      "defaultPermissionsBitfield": null,
+      "options": [
+        {
+          "type": 3,
+          "name": "message",
+          "description": "Message link, or its ID when run in the same channel",
+          "required": true,
+          "autocomplete": false,
+          "choices": null,
+          "minValue": null,
+          "maxValue": null
+        },
+        {
+          "type": 3,
+          "name": "reason",
+          "description": "Why are you reporting this message?",
+          "required": true,
+          "autocomplete": false,
+          "choices": null,
+          "minValue": null,
+          "maxValue": null
+        },
+        {
+          "type": 3,
+          "name": "comments",
+          "description": "Anything else the moderators should know",
+          "required": false,
+          "autocomplete": false,
+          "choices": null,
+          "minValue": null,
+          "maxValue": null
+        }
+      ],
+      "usage": "/report <message> <reason> {comments}",
+      "examples": "`/report https://discord.com/channels/…/…/… spam`\n`/report 123456789012345678 harassment`"
     },
     {
       "name": "Report Message",
