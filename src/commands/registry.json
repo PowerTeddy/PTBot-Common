@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "generatedAt": "2026-10-11T03:39:18.424Z",
+  "generatedAt": "2026-10-24T04:41:40.244Z",
   "commands": [
     {
       "name": "8ball",
@@ -520,8 +520,10 @@
       "global": false,
       "test": false,
       "owner": false,
-      "defaultPermissions": null,
-      "defaultPermissionsBitfield": null,
+      "defaultPermissions": [
+        "MANAGE_GUILD"
+      ],
+      "defaultPermissionsBitfield": "32",
       "options": [],
       "usage": "/leave",
       "examples": "`/leave`"
@@ -1035,6 +1037,20 @@
       ],
       "usage": "/reload <command>",
       "examples": "`/reload help`"
+    },
+    {
+      "name": "Report Message",
+      "description": "Report a message to the server's moderators",
+      "category": "moderation",
+      "defaultState": "on",
+      "global": false,
+      "test": false,
+      "owner": false,
+      "defaultPermissions": null,
+      "defaultPermissionsBitfield": null,
+      "options": [],
+      "usage": "Right-click a message → **Apps** → **Report Message**",
+      "examples": "Right-click a message → **Apps** → **Report Message**"
     },
     {
       "name": "rp",
@@ -1654,6 +1670,22 @@
       ],
       "usage": "/userinfo {@user}",
       "examples": "`/userinfo`\n`/userinfo @PT`"
+    },
+    {
+      "name": "View Cases",
+      "description": "View the moderation cases for this user",
+      "category": "moderation",
+      "defaultState": "on",
+      "global": false,
+      "test": false,
+      "owner": false,
+      "defaultPermissions": [
+        "MODERATE_MEMBERS"
+      ],
+      "defaultPermissionsBitfield": "1099511627776",
+      "options": [],
+      "usage": "Right-click a user → **Apps** → **View Cases**",
+      "examples": "Right-click a user → **Apps** → **View Cases**"
     },
     {
       "name": "wallpaper",
