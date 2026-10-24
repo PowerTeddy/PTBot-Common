@@ -36,6 +36,12 @@ function buildModels(mongoose) {
         modNotify: { type: Map, of: Boolean, default: {} },
         // per-command dashboard toggles (command name -> packed bits)
         modCommands: { type: Map, of: Number, default: {} },
+        rssFeeds: [{
+            url: { type: String, required: true },
+            channelID: { type: String, required: true },
+            enabled: { type: Boolean, default: true },
+            embedColor: { type: String, required: false }
+        }],
         // per-guild moderation case counter
         caseSeq: { type: mongoose.SchemaTypes.Number, required: false, default: 0 },
         lastSyncedAt: { type: mongoose.SchemaTypes.Date, required: false, default: null },
