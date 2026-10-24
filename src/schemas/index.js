@@ -27,6 +27,9 @@ function buildModels(mongoose) {
         reportChannel: { type: mongoose.SchemaTypes.String, required: false },
         logmemberChannel: { type: mongoose.SchemaTypes.String, required: false },
         disabledRpActions: { type: [mongoose.SchemaTypes.String], required: false, default: [] },
+        // command names explicitly disabled from the dashboard; resync must
+        // not re-create these on restart (default-on commands included)
+        disabledCommands: { type: [mongoose.SchemaTypes.String], required: false, default: [] },
         // packed moderation flags: 1 = notify, 2 = require reason, 4 = require duration
         modFlags: { type: mongoose.SchemaTypes.Number, required: false, default: 1 },
         // per-command notify overrides (command name -> boolean)
