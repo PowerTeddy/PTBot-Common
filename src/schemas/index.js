@@ -23,6 +23,8 @@ function buildModels(mongoose) {
         logGoodbyeChannel: { type: mongoose.SchemaTypes.String, required: false },
         goodbyeBackground: { type: mongoose.SchemaTypes.String, required: false },
         modlogChannel: { type: mongoose.SchemaTypes.String, required: false },
+        // destination for the Report Message context-menu command
+        reportChannel: { type: mongoose.SchemaTypes.String, required: false },
         logmemberChannel: { type: mongoose.SchemaTypes.String, required: false },
         disabledRpActions: { type: [mongoose.SchemaTypes.String], required: false, default: [] },
         // packed moderation flags: 1 = notify, 2 = require reason, 4 = require duration
