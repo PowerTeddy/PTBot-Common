@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "generatedAt": "2026-10-24T05:12:07.100Z",
+  "generatedAt": "2026-10-24T06:04:54.509Z",
   "commands": [
     {
       "name": "8ball",
@@ -1040,7 +1040,7 @@
     },
     {
       "name": "report",
-      "description": "Report a message to the server's moderators",
+      "description": "Report a message or user to the server's moderators",
       "category": "moderation",
       "defaultState": "on",
       "global": false,
@@ -1052,7 +1052,7 @@
         {
           "type": 3,
           "name": "message",
-          "description": "Message link, or its ID when run in the same channel",
+          "description": "Message link/ID, or a user mention (@user) to report",
           "required": true,
           "autocomplete": false,
           "choices": null,
@@ -1062,7 +1062,7 @@
         {
           "type": 3,
           "name": "reason",
-          "description": "Why are you reporting this message?",
+          "description": "Why are you reporting this?",
           "required": true,
           "autocomplete": false,
           "choices": null,
@@ -1080,8 +1080,8 @@
           "maxValue": null
         }
       ],
-      "usage": "/report <message> <reason> {comments}",
-      "examples": "`/report https://discord.com/channels/…/…/… spam`\n`/report 123456789012345678 harassment`"
+      "usage": "/report <message | @user> <reason> {comments}",
+      "examples": "`/report https://discord.com/channels/…/…/… spam`\n`/report 123456789012345678 harassment`\n`/report @user harassment`"
     },
     {
       "name": "Report Message",
@@ -1096,6 +1096,20 @@
       "options": [],
       "usage": "Right-click a message → **Apps** → **Report Message**",
       "examples": "Right-click a message → **Apps** → **Report Message**"
+    },
+    {
+      "name": "Report User",
+      "description": "Report a user to the server's moderators",
+      "category": "moderation",
+      "defaultState": "on",
+      "global": false,
+      "test": false,
+      "owner": false,
+      "defaultPermissions": null,
+      "defaultPermissionsBitfield": null,
+      "options": [],
+      "usage": "Right-click a user → **Apps** → **Report User**",
+      "examples": "Right-click a user → **Apps** → **Report User**"
     },
     {
       "name": "rp",
