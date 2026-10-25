@@ -37,6 +37,7 @@ function buildModels(mongoose) {
         // per-command dashboard toggles (command name -> packed bits)
         modCommands: { type: Map, of: Number, default: {} },
         rssFeeds: [{
+            title: { type: String, required: false },
             url: { type: String, required: true },
             channelID: { type: String, required: true },
             enabled: { type: Boolean, default: true },
