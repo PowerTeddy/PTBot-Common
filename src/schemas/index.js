@@ -41,6 +41,7 @@ function buildModels(mongoose) {
             url: { type: String, required: true },
             channelID: { type: String, required: true },
             enabled: { type: Boolean, default: true },
+            pingRoleID: { type: String, required: false, default: null },
             lastEntry: { type: String, default: null },
             embedColor: { type: String, required: false }
         }],
